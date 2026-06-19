@@ -14,14 +14,9 @@ def bienvenida():
 def calcular_operaciones(a, b):
     """
     Función que recibe dos números y retorna su suma y promedio.
-
-    Parámetros:
-    a (float): primer número
-    b (float): segundo número
-
-    Retorno:
-    tuple: (suma, promedio)
     """
+
     suma = a + b
     promedio = (a + b) / 2
+
     return suma, promedio
