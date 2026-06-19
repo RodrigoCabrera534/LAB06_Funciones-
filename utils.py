@@ -1,6 +1,6 @@
 # utils.py - Módulo de funciones reutilizables
 # Laboratorio 6 - Fundamentos de Programación
-
+import re
 def bienvenida():
     """
     Función sin parámetros que muestra un mensaje de bienvenida.
@@ -24,3 +24,17 @@ def calcular_operaciones(a, b):
     promedio = (a + b) / 2
 
     return suma, promedio
+
+def validar_email(texto):
+    """
+    Función que valida si una cadena es un correo electrónico válido.
+
+    Parámetros:
+    texto (str): cadena a validar
+
+    Retorno:
+    bool: True si es un email válido, False en caso contrario
+    """
+    patron = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    resultado = bool(re.match(patron, texto))
+    return resultado

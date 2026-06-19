@@ -1,4 +1,4 @@
-from utils import bienvenida, calcular_operaciones
+from utils import bienvenida, calcular_operaciones, validar_email
 
 bienvenida()
 
@@ -16,3 +16,14 @@ while True:
 
     if continuar.lower() != "1":
         break
+
+    # Parte 3: validación de email
+
+correo = input("\nIngresa un correo electrónico: ")
+
+es_valido = validar_email(correo)
+
+if es_valido:
+    print(f"'{correo}' ES un correo válido.")
+else:
+    print(f"'{correo}' NO es un correo válido.")
