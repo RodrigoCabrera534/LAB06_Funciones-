@@ -13,17 +13,18 @@ def bienvenida():
 
 def calcular_operaciones(a, b):
     """
-    Función que recibe dos números y retorna su suma y promedio.
+    Función extendida: calcula suma, promedio, máximo y mínimo.
     Parámetros:
-        a (float): primer número.
-        b (float): segundo número.
+        a (float): primer número
+        b (float): segundo número
     Retorno:
-        tuple: contiene la suma y el promedio.
+        tuple: (suma, promedio, maximo, minimo)
     """
-    suma = a + b
+    suma     = a + b
     promedio = (a + b) / 2
-
-    return suma, promedio
+    maximo   = a if a > b else b
+    minimo   = a if a < b else b
+    return suma, promedio, maximo, minimo
 
 def validar_email(texto):
     """
