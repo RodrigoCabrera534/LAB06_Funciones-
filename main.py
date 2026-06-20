@@ -1,20 +1,32 @@
-from utils import bienvenida, calcular_operaciones, validar_email
+# main.py - Programa de integración final
 
+from utils import (
+    bienvenida,
+    calcular_operaciones,
+    validar_email,
+    calcular_estadisticas
+)
+
+# 1. Bienvenida
 bienvenida()
 
-# Parte 4: función extendida
-num1 = float(input("Ingresa el primer número: "))
-num2 = float(input("Ingresa el segundo número: "))
-suma, promedio, maximo, minimo = calcular_operaciones(num1, num2)
-print(f"Suma     : {suma}")
-print(f"Promedio : {promedio:.2f}")
-print(f"Máximo   : {maximo}")
-print(f"Mínimo   : {minimo}")
+# 2. Operaciones numéricas
+a, b = 15.0, 25.0
+suma, prom, maximo, minimo = calcular_operaciones(a, b)
 
-# Parte 3: validación de email
-correo = input("\nIngresa un correo electrónico: ")
-es_valido = validar_email(correo)
-if es_valido:
-    print(f"'{correo}' ES un correo válido.")
-else:
-    print(f"'{correo}' NO es un correo válido.")
+print(f"\nOperaciones con {a} y {b}:")
+print(f"  Suma={suma}  Promedio={prom}  Max={maximo}  Min={minimo}")
+
+# 3. Validación de emails
+correos = ["alumno@upn.pe", "invalido-sin-arroba", "test@gmail.com"]
+print("\nValidación de correos:")
+for c in correos:
+    print(f"  {c} -> {'Válido' if validar_email(c) else 'Inválido'}")
+
+# 4. Estadísticas de lista
+datos = [10, 45, 23, 67, 89, 12, 34]
+stats = calcular_estadisticas(datos)
+
+print(f"\nEstadísticas de {datos}:")
+for k, v in stats.items():
+    print(f"  {k}: {v}")
